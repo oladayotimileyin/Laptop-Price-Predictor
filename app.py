@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 
 #import files
 
-file1= open('pipe.pkl', 'rb')
-rf = pickle.load(file1)
-file1.close() 
+rf = joblib.load('pipe.joblib')
 
 # read in data
 data = pd.read_csv('traineddata.csv')
