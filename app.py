@@ -33,7 +33,14 @@ os = st.selectbox('OS', data['OpSystem'].unique())
 
 # input weight of laptop
 
-weight = st.number_input('Input weight of laptop in Kg')
+weight = st.number_input('Enter the weight of the laptop (in kg)', min_value=0.5, max_value=4.0)
+
+if weight:
+    st.write(f'You entered {weight} kg')
+else:
+    st.write('Please enter a weight to proceed')
+    
+#weight = st.number_input('Input weight of laptop in Kg')
 
 # select if you want touchscreen or not
 
@@ -45,7 +52,15 @@ ips = st.selectbox('IPS', ['No', 'Yes'])
 
 # input screen size
 
-screen_size = st.number_input('Input Screen Size')
+screen_size = st.number_input('Input Screen Size (6.0 - 18.0 Inches)', min_value=6.0, max_value=18.0)
+
+if screen_size:
+    st.write(f'You entered a screen size of {screen_size} inches')
+else:
+    st.write('Please enter a screen size to proceed')
+
+
+# screen_size = st.number_input('Input Screen Size')
 
 # select resolution of laptop
 resolution = st.selectbox('Screen Resolution', [
